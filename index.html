@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bootstrap Responsive Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-jkFYoRwrI7O+x/A/E+3WyXnpNOd2Ogjbc6Uqwq6r+iB6WJf8G+0xjT2Tfwv7VWFGJ8sD7VhxJCgjvymr7HVW1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            /* Define the scrollbar style */
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
+        
+            /* Track */
+            ::-webkit-scrollbar-track {
+                background: #222;
+            }
+        
+            /* Handle */
+            ::-webkit-scrollbar-thumb {
+                background: #888;
+            }
+        
+            /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+                background: #555;
+            }
+        </style>
+        
+    <style>
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+
+        body {
+            background-color: #222;
+            color: rgb(252, 252, 252);
+        }
+
+
+        .countdown {
+            margin-top: 50px;
+            /* make items in one row only */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+
+        }
+
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #111;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px;
+            width: 100px;
+            height: 130px;
+            box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.1);
+        }
+
+        /* make query for mobiles */
+        @media (max-width: 768px) {
+            .countdown-item {
+                width: 90px;
+                height: 130px;
+                margin: 5px;
+            }
+
+            .countdown-item-number {
+                font-size: 30px;
+                font-weight: bold;
+                margin-bottom: 10px;
+
+            }
+
+            .countdown-item-label {
+                font-size: 8px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 5px;
+            }
+
+            #seconds_ {
+                display: none;
+            }
+        }
+
+        .countdown-item-number {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 10px;
+
+        }
+
+        .countdown-item-label {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#"><img src="/images/eventhive-logo.png" height="30" alt="Event Logo" />
+
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Carousel -->
+    <section class="container-fluid mt-4">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            </ol>
+            <div class="carousel-inner w-100" role="listbox">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="/images/1.jpg" alt="First slide" />
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="/images/2.jpg" alt="Second slide" />
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </section>
+    <!-- About -->
+    <section class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-md-7">
+                <h2 class="font-weight-bold text-uppercase">Our Product</h2>
+                <p class="lead">Event Hive is the ultimate platform for event planners, vendors, and attendees. With our
+                    suite of powerful tools, you can streamline the event planning process, connect with vendors and
+                    attendees, and make your event a success.</p>
+                <p class="lead">Whether you're organizing a small corporate event or a large-scale festival, Event Hive
+                    has everything you need to make it a success. Our platform is user-friendly, reliable, and
+                    affordable, making it accessible to everyone.</p>
+            </div>
+            <div class="col-md-5">
+                <h2 class="font-weight-bold text-uppercase">Why Choose Us</h2>
+                <ul class="list-unstyled">
+                    <li>
+                        <p class="lead"> Powerful suite of event planning tools</p>
+                    </li>
+                    <li>
+                        <p class="lead"> Seamless event experience for attendees</p>
+                    </li>
+                    <li>
+                        <p class="lead"> Easy-to-use vendor marketplace</p>
+                    </li>
+                    <li>
+                        <p class="lead"> Real-time analytics and reporting</p>
+                    </li>
+                    <li>
+                        <p class="lead"> User-friendly and affordable platform</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Countdown -->
+    <section class="container-fluid mt-4">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-12 col-md-6 text-center mb-4">
+                <h2 class="text-uppercase mb-3 font-weight-bold">Get Ready for the Launch</h2>
+                <p class="text-muted mb-0">We're just a few Months away from launching our app. Stay tuned for the big
+                    reveal!</p>
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <div class="countdown-item-number" id="days">0</div>
+                        <div class="countdown-item-label">Days</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-item-number" id="hours">0</div>
+                        <div class="countdown-item-label">Hours</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-item-number" id="minutes">0</div>
+                        <div class="countdown-item-label">Minutes</div>
+                    </div>
+                    <div class="countdown-item" id="seconds_">
+                        <div class="countdown-item-number" id="seconds">0</div>
+                        <div class="countdown-item-label">Seconds</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <section class="container-fluid mt-4">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-12 col-md-7 text-center mb-4">
+                <h2 class="text-uppercase mb-3 font-weight-bold">Get in Touch</h2>
+                <p class="text-muted mb-0">If you have any questions or feedback, we'd love to hear from you!</p>
+                <p class="text-muted mb-0">We also offer a free demo of our platform. Contact us to learn more.</p>
+            </div>
+            <div class="col-12 col-md-6 text-center">
+                <h2 class="text-uppercase mb-3 font-weight-bold">Contact Us</h2>
+                <div class="contact-info">
+                    <p class="mb-2"><i class="fas fa-envelope mr-2"></i> Email: info@eventhive.com</p>
+                    <p class="mb-2"><i class="fas fa-phone mr-2"></i> Phone: 01146067319</p>
+                    <i class="fab fa-whatsapp mr-2"><a href="https://wa.me/+201146067319">
+                            <img src="/images/whatsapp-icon.png" alt="whatsapp" height="50">
+                        </a></i>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="container-fluid bg-dark text-light mt-4">
+        <div class="row">
+            <div class="col-md-12 mt-4 text-center">
+                <p>&copy; 2023 EventHive. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!-- JavaScript for dark mode toggle -->
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+        // Set the date we're counting down to
+        var countDownDate = new Date("sep 13, 2023 00:00:00").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the corresponding HTML elements
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+            // If the count down is finished, display a message
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+
+    </script>
+</body>
+
+</html>
